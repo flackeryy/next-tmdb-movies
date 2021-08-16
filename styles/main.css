@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btn {
+        @apply flex-none;
+        @apply items-center;
+        @apply justify-center;
+        @apply h-9;
+        @apply rounded-md;
+        @apply bg-black;
+        @apply text-white;
+        @apply px-4;
+        @apply hover:opacity-75
+    }
+    .btn-bookmark {
+        @apply btn;
+    }
+    .btn-bookmark[data-active="true"] {
+        color: #ffd27d;
+    }
+    .btn-bookmark > svg {
+        width: 12px;
+    }
+    .rate-star {
+        width: 20px;
+        @apply mr-2;
+    }
+}
