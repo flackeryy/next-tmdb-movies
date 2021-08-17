@@ -21,14 +21,26 @@ export default function MovieCard({ id, title, rate, date, posterPath }) {
   }
 
   return (
-    <li className="flex w-full overflow-x-hidden mb-8 last:mb-0 md:rounded-xl md:shadow-xl">
+    <li className="flex w-full overflow-x-hidden md:mb-8 last:mb-0 md:rounded-xl md:shadow-xl">
       <div className="w-1/3 md:w-1/4">
-        <img src={getPath(posterPath)} alt="poster" />
+        {posterPath ? (
+          <img
+            className="w-full h-full"
+            src={getPath(posterPath)}
+            alt="poster"
+          />
+        ) : (
+          <img
+            className="w-full h-full"
+            src="https://via.placeholder.com/200x252.png"
+            alt=""
+          />
+        )}
       </div>
       <div className="w-2/3 md:w-3/4 flex flex-col p-6">
         <h3 className="text-xl font-semibold mb-1">{title}</h3>
         <p className="text-lg font-semibold text-gray-500 mb-1">
-          {date ? formatDate(date) : 'N/A'}
+          {date ? formatDate(date) : 'No release date'}
         </p>
         <p className="font-semibold text-gray-500 mb-4 flex">
           <StarIcon className="rate-star" />

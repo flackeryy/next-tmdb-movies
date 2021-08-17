@@ -25,6 +25,7 @@
     }
     .rate-star {
         width: 20px;
+        height: 20px;
         @apply mr-2;
     }
 }
